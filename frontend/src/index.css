@@ -27,6 +27,10 @@ textarea {
   border: 1px solid;
 }
 
+button:hover {
+  background-color: var(--hover);
+}
+
 /* navbar starts here */
 .navbar-container {
   height: 50px;
@@ -264,6 +268,13 @@ input[type=number] {
   transition: max-height 0.2s ease-out;
 }
 
+.delete-icon {
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  float: right;
+}
+
 
 /* comments section */
 .comment-section {
@@ -294,6 +305,10 @@ input[type=number] {
   vertical-align: middle;
   border: 1px solid;
   border-left: none;
+}
+
+.add-comment button:hover {
+  background-color: var(--hover);
 }
 
 .other-user-comment {

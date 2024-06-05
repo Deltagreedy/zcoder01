@@ -11,7 +11,7 @@ const getProfile = async (req, res) => {
 
     const user = await User.findById(userid)
     const username = user.username
-    const qna = await Qna.find({ username, ispublic: true })
+    const qna = await Qna.find({ username, ispublic: true }).sort({createdAt: -1})
     // console.log(qna)
     if (!profile) {
         // If no profile is found, send a 404 response
@@ -34,7 +34,7 @@ const getOtherProfile = async (req, res) => {
         // if (!profile) {
         //     return res.status(404).json({ error: 'Profile not found' });
         // }
-        const qna = await Qna.find({ username: usenam, ispublic: true })
+        const qna = await Qna.find({ username: usenam, ispublic: true }).sort({createdAt: -1})
         // console.log(qna)
         // if(qna.length===0)
         console.log("go", profile, qna);

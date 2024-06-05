@@ -3,7 +3,7 @@ import { useAuthContext } from "../hooks/useAuthContext"
 import { useNavigate } from 'react-router-dom'; 
 
 
-const Update_Profile = () => {
+const UpdateProfile = () => {
   const navigate = useNavigate();
 
     const [error,setError]=useState(null)
@@ -88,10 +88,11 @@ const handleSubmit = async (e) => {
 
       <button>Add Profile</button>
       <br />
+      <br />
       {error && <div className="error">{error}</div>}
       <br />
     </form>
   )
 }
 
-export default Update_Profile
+export default UpdateProfile

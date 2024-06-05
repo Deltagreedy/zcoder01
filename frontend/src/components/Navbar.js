@@ -21,10 +21,10 @@ const Navbar = () => {
             <nav>
                 {user ? (<div>
                     <span style={{marginRight: '30px'}}>{user.username}</span>
-                    <button style={{marginRight: '30px'}} onClick={handleClick}>log out</button>
+                    <button style={{marginRight: '30px'}} onClick={handleClick} className='user-link'><u>log out</u></button>
                 </div>) : (<div>
-                    <Link to="/login" style={{marginRight: '30px'}}>login</Link>
-                    <Link to="/signup" style={{marginRight: '30px'}}>signup</Link>
+                    <Link to="/login" style={{marginRight: '30px'}} className='user-link'><u>login</u></Link>
+                    <Link to="/signup" style={{marginRight: '30px'}} className='user-link'><u>signup</u></Link>
                 </div>)
                 }
             </nav>

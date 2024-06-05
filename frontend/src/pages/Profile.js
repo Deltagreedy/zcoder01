@@ -101,11 +101,12 @@ const Profile = () => {
                         )
                     }
                 </div>
-
             )}
             <br /><br />
             <div className="profile-problems">
                 <div>
+                    <hr />
+                    <h2 style={{color: '#162114'}}>your recent posts....</h2>
                     {qna ? qna?.map(qna => (
                         <QnaDetails qna={qna} key={qna._id} />
                     )) : (

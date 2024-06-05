@@ -9,9 +9,9 @@ import Home from './pages/Home'
 import Problem from './pages/Problem'
 import NewProb from './pages/NewProb'
 import Profile from './pages/Profile'
-import Edit_Profile from './components/Edit_Profile'
-import Update_Profile from './components/Update_Profile'
-import Other_Profile from './pages/Other_Profile'
+import EditProfile from './components/Edit_Profile'
+import UpdateProfile from './components/Update_Profile'
+import OtherProfile from './pages/Other_Profile'
 import { useAuthContext } from './hooks/useAuthContext'
 
 function App() {
@@ -49,15 +49,15 @@ function App() {
           />
           <Route
             path='/profile/:usenam'
-            element={< Other_Profile />}
+            element={< OtherProfile />}
           />
           <Route
             path='/profile/edit'
-            element={user ? <Edit_Profile /> : <Navigate to="/signup" />}
+            element={user ? <EditProfile /> : <Navigate to="/signup" />}
           />
           <Route
             path='/profile/update'
-            element={user ? < Update_Profile /> : <Navigate to="/signup" />}
+            element={user ? < UpdateProfile /> : <Navigate to="/signup" />}
           />
           <Route
             path='/problem/new'

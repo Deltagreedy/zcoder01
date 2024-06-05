@@ -3,7 +3,7 @@ import { useAuthContext } from "../hooks/useAuthContext"
 import { useNavigate } from 'react-router-dom';
 
 
-const Edit_Profile = () => {
+const EditProfile = () => {
   const navigate = useNavigate();
 
   const [error, setError] = useState(null)
@@ -88,10 +88,11 @@ const Edit_Profile = () => {
 
       <button>Add Profile</button>
       <br />
+      <br />
       {error && <div className="error">{error}</div>}
       <br />
     </form>
   )
 }
 
-export default Edit_Profile
+export default EditProfile

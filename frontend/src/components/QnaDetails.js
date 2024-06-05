@@ -99,8 +99,8 @@ const QnaDetails = ({ qna }) => {
                                     showComments && (
                                         <div>
                                             {comments ? comments?.map(c => (
-                                                <div className={c.username == user?.username ? 'same-user-comment' : 'other-user-comment'}>
-                                                    <p><u><Link className='user-link' to={`/profile/${c.username}`}>{c.username == user?.username ? YOU : c.username}</Link></u>: <pre style={{ fontStyle: 'inherit' }}>{c.comment}</pre></p>
+                                                <div className={c.username === user?.username ? 'same-user-comment' : 'other-user-comment'}>
+                                                    <p><u><Link className='user-link' to={`/profile/${c.username}`}>{c.username === user?.username ? YOU : c.username}</Link></u>: <pre style={{ fontStyle: 'inherit' }}>{c.comment}</pre></p>
                                                 </div>
                                             )) : (
                                                 <p>nothing is here</p>
@@ -135,7 +135,7 @@ const QnaDetails = ({ qna }) => {
             {
                 !qna.ispublic ? (
                     <div>
-                        <button style={{ float: 'right' }} onClick={handleClick}><FaTrash style={{ color: '#181a18' }} /></button>
+                        <button className='delete-icon' onClick={handleClick}><FaTrash style={{ color: '#181a18' }} /></button>
                         <p style={{ fontSize: '23px' }}><b><u>{qna.title}</u></b> \ rating: {qna.rating ? qna.rating : 'n/a'}</p>
                         <Accordion title="Question">
                             <pre style={{ fontFamily: 'inherit', overflow: 'auto' }}>{qna.question}</pre>

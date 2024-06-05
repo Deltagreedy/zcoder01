@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useAuthContext } from "../hooks/useAuthContext"
 import QnaDetails from "../components/QnaDetails"
 
-const Other_Profile = () => {
+const OtherProfile = () => {
     const [loading, setLoading] = useState(true);
     const { usenam } = useParams(); // Destructure the username from the URL
     const [error, setError] = useState(null);
@@ -74,7 +74,7 @@ const Other_Profile = () => {
     return (
         <div className='profile'>
             <h2>Profile</h2>
-            {profile ? (
+            {profile && user ? (
                 <div>
                     <p>Usermame: {username}</p>
                     <p>Name: {name}</p>
@@ -98,17 +98,23 @@ const Other_Profile = () => {
                 </div>
             )}
             <br /><br />
-            <div className="profile-problems">
-                <div>
-                    {qna ? qna?.map(qna => (
-                        <QnaDetails qna={qna} key={qna._id} />
-                    )) : (
-                        <p>yo no problimo is added here yet</p>
-                    )}
-                </div>
-            </div>
+            {
+                user && (
+                    <div className="profile-problems">
+                        <div>
+                            <hr />
+                            <h2 style={{color: '#162114'}}>{userNam} 's recent posts...</h2>
+                            {qna ? qna?.map(qna => (
+                                <QnaDetails qna={qna} key={qna._id} />
+                            )) : (
+                                <p>yo no problimo is added here yet</p>
+                            )}
+                        </div>
+                    </div>
+                )
+            }
         </div >
     );
 };
 
-export default Other_Profile;
+export default OtherProfile;
